@@ -1,0 +1,119 @@
+// flex 方式居中
+@mixin flex-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+// flex 方式水平布局居中
+@mixin flex-horizontal-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+// flex 方式垂直布局居中
+@mixin flex-vertical-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// 鼠标移上时显示白色蒙层
+@mixin mouse-hover-mask {
+  &:hover {
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+// 滚动条设置
+@mixin scrollBar {
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: #F6F6F6;
+  }
+  /*定义滚动条轨道*/
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px transparent;
+    border-radius: 0;
+    background-color: #F5F5F5;
+  }
+  /*定义滑块*/
+  &::-webkit-scrollbar-thumb {
+    background-color: #D4D4D4;
+  }
+  /*定义滚动条两端按钮*/
+  &::-webkit-scrollbar-button {
+    display: block;
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track:horizontal {
+    padding: 0;
+    margin: 0;
+  }
+  //&::-webkit-scrollbar-button:horizontal:single-button:start {
+  //  background: url(~@/assets/img/icon/icon-scroll-left.png) 0 0 no-repeat;
+  //  cursor: pointer;
+  //}
+  //&::-webkit-scrollbar-button:horizontal:single-button:end {
+  //  text-align: right;
+  //  background: url(~@/assets/img/icon/icon-scroll-right.png) 0 0 no-repeat;
+  //  cursor: pointer;
+  //}
+}
+
+// 页面内容 div 使用，设置了圆角和阴影
+@mixin page-content-wrapper {
+  background-color: #fff;
+  box-shadow: 1px 2px 8px 0 rgba(223, 227, 235, 0.66);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 18px;
+}
+
+// 弹框内容布局（样式为左边标题，右边输入框/文字）
+@mixin dialog-content-layout {
+  box-sizing: border-box;
+
+  .row {
+    @include flex-horizontal-center;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      width: 80px;
+      flex-basis: 80px;
+      flex-shrink: 0;
+      text-align: right;
+      font-size: 12px;
+      font-family: "Microsoft YaHei";
+      color: rgba(125, 125, 125, 1);
+      line-height: 24px;
+    }
+
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+// label 字体设置（左名称，右内容布局时，左边的都称为 label）
+@mixin label-font {
+  font-size: 12px;
+  font-weight: 300;
+  color: #7D7D7D;
+}

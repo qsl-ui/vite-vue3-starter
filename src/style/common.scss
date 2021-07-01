@@ -1,0 +1,94 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #efeff4;
+  font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
+}
+
+.scroll {
+  &.el-scrollbar {
+    height: 100%;
+  }
+
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
+}
+
+.flr {
+  float: right;
+}
+
+.fll {
+  float: left;
+}
+
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
+}
+
+.list-table-delete {
+  white-space: nowrap;
+  .icon-delete-warning {
+    color: #ff8023;
+  }
+}
+
+// vue-select
+.vue-treeselect__control {
+  border-radius: 2px !important;
+  height: 32px !important;
+  border: solid 1px #dcdfe6 !important;
+  color: #dcdfe6;
+  font-size: 12px;
+}
+
+.vue-treeselect__placeholder {
+  color: #c0c4cc !important;
+}
+
+.vue-treeselect__placeholder,
+.vue-treeselect__single-value {
+  padding-left: 10px !important;
+}
+
+.vue-treeselect__menu {
+  border: solid 1px #dcdfe6 !important;
+  box-shadow: none !important;
+  border-radius: 2px !important;
+}
+
+.vue-treeselect--open-below .vue-treeselect__menu {
+  border-top-color: #dcdfe6 !important;
+}
+
+.vue-treeselect__label {
+  font-weight: normal !important;
+  font-size: 12px !important;
+}
+
+.vue-treeselect__option {
+  height: 34px !important;
+  line-height: 34px !important;
+}
+
+.vue-treeselect--single .vue-treeselect__option--selected {
+  background: transparent !important;
+  color: $themeColor !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+}
+
+.vue-treeselect__x-container:hover {
+  color: $themeColor !important;
+}
